@@ -1,0 +1,1445 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; penambangan_web</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Untitled0';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/83963442.jpeg" class="logo__image only-light" alt="penambangan_web - Home"/>
+    <script>document.write(`<img src="_static/83963442.jpeg" class="logo__image only-dark" alt="penambangan_web - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Task</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CrawlingPtaUTM.html">Crawling PTA UTM teknik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling_Berita.html">Crawling Website Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopicModelling_LDA.html">Topic Modelling</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/maulanmaib/penambangan_web/blob/master/docs/Untitled0.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/maulanmaib/penambangan_web" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/maulanmaib/penambangan_web/issues/new?title=Issue%20on%20page%20%2FUntitled0.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Untitled0.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing modules</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span>
+<span class="c1"># Read data into papers</span>
+<span class="n">papers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/ppw/dataPTATrunojoyo.csv&#39;</span><span class="p">)</span>
+<span class="c1"># Print head</span>
+<span class="n">papers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-1c3ebd3fc156&gt;</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Read data into papers</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">papers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/ppw/dataPTATrunojoyo.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Print head</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">papers</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>                     <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> 
+<span class="g g-Whitespace">    </span><span class="mi">213</span>         <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">wrapper</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>                     <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>                 <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span> 
+<span class="g g-Whitespace">    </span><span class="mi">333</span>         <span class="c1"># error: &quot;Callable[[VarArg(Any), KwArg(Any)], Any]&quot; has no</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span> 
+<span class="ne">--&gt; </span><span class="mi">950</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">951</span> 
+<span class="g g-Whitespace">    </span><span class="mi">952</span> 
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span> 
+<span class="g g-Whitespace">    </span><span class="mi">604</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">605</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span> 
+<span class="g g-Whitespace">    </span><span class="mi">607</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1440</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1441</span>         <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1442</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1444</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span>                 <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1734</span>                     <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1735</span>             <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1736</span>                 <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1737</span>                 <span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">854</span>         <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>             <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">856</span>             <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>                 <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>                 <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/content/drive/MyDrive/ppw/dataPTATrunojoyo.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove the columns</span>
+<span class="n">papers</span> <span class="o">=</span> <span class="n">papers</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">,</span> <span class="s1">&#39;Judul&#39;</span><span class="p">,</span> <span class="s1">&#39;Nama Penulis&#39;</span><span class="p">,</span><span class="s1">&#39;Pembimbing I&#39;</span><span class="p">,</span><span class="s1">&#39;Pembimbing II&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Print out the first rows of papers</span>
+<span class="n">papers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-f0559810-2a0c-4cc4-90b8-e91b3333d34b" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Abstrak</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>251</th>
+      <td>Game edukasi merupakan salah satu jenis aplika...</td>
+    </tr>
+    <tr>
+      <th>513</th>
+      <td>Game merupakan aplikasi yang digunakan sebagai...</td>
+    </tr>
+    <tr>
+      <th>829</th>
+      <td>Rekam medis dalam dunia kedokteran merupakan h...</td>
+    </tr>
+    <tr>
+      <th>853</th>
+      <td>Investasi saham selama ini memiliki resiko ker...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Beasiswa adalah pemberian berupa bantuan keuan...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Pengukuran kinerja adalah proses di mana organ...</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>Jalan raya merupakan prasarana transportasi ya...</td>
+    </tr>
+    <tr>
+      <th>279</th>
+      <td>Diabetic retinopathy adalah kondisi kerusakan ...</td>
+    </tr>
+    <tr>
+      <th>819</th>
+      <td>Permasalahan yang dihadapi oleh instansi pemer...</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Pemerataan pendidikan di Indonesia telah menja...</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 1 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f0559810-2a0c-4cc4-90b8-e91b3333d34b')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-f0559810-2a0c-4cc4-90b8-e91b3333d34b button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-f0559810-2a0c-4cc4-90b8-e91b3333d34b');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-32b8298a-6dc9-4aea-ba3f-bd733a78f9a9">
+  <button class="colab-df-quickchart" onclick="quickchart('df-32b8298a-6dc9-4aea-ba3f-bd733a78f9a9')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-32b8298a-6dc9-4aea-ba3f-bd733a78f9a9 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">papers</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-3aae0087-ab4d-455d-abcd-2f7395d70aa6" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Abstrak</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>251</th>
+      <td>Game edukasi merupakan salah satu jenis aplika...</td>
+    </tr>
+    <tr>
+      <th>513</th>
+      <td>Game merupakan aplikasi yang digunakan sebagai...</td>
+    </tr>
+    <tr>
+      <th>829</th>
+      <td>Rekam medis dalam dunia kedokteran merupakan h...</td>
+    </tr>
+    <tr>
+      <th>853</th>
+      <td>Investasi saham selama ini memiliki resiko ker...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Beasiswa adalah pemberian berupa bantuan keuan...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-3aae0087-ab4d-455d-abcd-2f7395d70aa6')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-3aae0087-ab4d-455d-abcd-2f7395d70aa6 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-3aae0087-ab4d-455d-abcd-2f7395d70aa6');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-c3575546-488b-4d0a-ac05-10e44170bed8">
+  <button class="colab-df-quickchart" onclick="quickchart('df-c3575546-488b-4d0a-ac05-10e44170bed8')"
+            title="Suggest charts."
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-c3575546-488b-4d0a-ac05-10e44170bed8 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gensim</span>
+<span class="kn">from</span> <span class="nn">gensim.utils</span> <span class="kn">import</span> <span class="n">simple_preprocess</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+<span class="n">stop_words</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;from&#39;</span><span class="p">,</span> <span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="s1">&#39;re&#39;</span><span class="p">,</span> <span class="s1">&#39;edu&#39;</span><span class="p">,</span> <span class="s1">&#39;use&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">sent_to_words</span><span class="p">(</span><span class="n">sentences</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+        <span class="c1"># deacc=True removes punctuations</span>
+        <span class="k">yield</span><span class="p">(</span><span class="n">gensim</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">simple_preprocess</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">sentence</span><span class="p">),</span> <span class="n">deacc</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">texts</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">simple_preprocess</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">doc</span><span class="p">))</span>
+             <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">papers</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">data_words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sent_to_words</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="c1"># remove stop words</span>
+<span class="n">data_words</span> <span class="o">=</span> <span class="n">remove_stopwords</span><span class="p">(</span><span class="n">data_words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_words</span><span class="p">[:</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][:</span><span class="mi">30</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;game&#39;, &#39;edukasi&#39;, &#39;merupakan&#39;, &#39;salah&#39;, &#39;satu&#39;, &#39;jenis&#39;, &#39;aplikasi&#39;, &#39;permainan&#39;, &#39;interaktif&#39;, &#39;yang&#39;, &#39;digunakan&#39;, &#39;sebagai&#39;, &#39;media&#39;, &#39;pendukung&#39;, &#39;pembelajaran&#39;, &#39;dalam&#39;, &#39;game&#39;, &#39;edukasi&#39;, &#39;juga&#39;, &#39;terdapat&#39;, &#39;berbagai&#39;, &#39;tantangan&#39;, &#39;dan&#39;, &#39;konflik&#39;, &#39;yang&#39;, &#39;harus&#39;, &#39;diselesaikan&#39;, &#39;untuk&#39;, &#39;memenangkan&#39;, &#39;permainan&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gensim.corpora</span> <span class="k">as</span> <span class="nn">corpora</span>
+<span class="c1"># Create Dictionary</span>
+<span class="n">id2word</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">data_words</span><span class="p">)</span>
+<span class="c1"># Create Corpus</span>
+<span class="n">texts</span> <span class="o">=</span> <span class="n">data_words</span>
+<span class="c1"># Term Document Frequency</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">id2word</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">]</span>
+<span class="c1"># View</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">corpus</span><span class="p">[:</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][:</span><span class="mi">30</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0, 2), (1, 1), (2, 1), (3, 2), (4, 2), (5, 2), (6, 2), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 2), (16, 5), (17, 3), (18, 1), (19, 1), (20, 1), (21, 1), (22, 2), (23, 1), (24, 1), (25, 1), (26, 1), (27, 1), (28, 1), (29, 5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="c1"># number of topics</span>
+<span class="n">num_topics</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># Build LDA model</span>
+<span class="n">lda_model</span> <span class="o">=</span> <span class="n">gensim</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">LdaMulticore</span><span class="p">(</span><span class="n">corpus</span><span class="o">=</span><span class="n">corpus</span><span class="p">,</span>
+                                       <span class="n">id2word</span><span class="o">=</span><span class="n">id2word</span><span class="p">,</span>
+                                       <span class="n">num_topics</span><span class="o">=</span><span class="n">num_topics</span><span class="p">)</span>
+<span class="c1"># Print the Keyword in the 10 topics</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">lda_model</span><span class="o">.</span><span class="n">print_topics</span><span class="p">())</span>
+<span class="n">doc_lda</span> <span class="o">=</span> <span class="n">lda_model</span><span class="p">[</span><span class="n">corpus</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+WARNING:gensim.models.ldamulticore:too few updates, training might not converge; consider increasing the number of passes or iterations to improve accuracy
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(0,
+  &#39;0.027*&quot;yang&quot; + 0.021*&quot;dan&quot; + 0.018*&quot;dengan&quot; + 0.015*&quot;dapat&quot; + &#39;
+  &#39;0.014*&quot;sistem&quot; + 0.014*&quot;dalam&quot; + 0.012*&quot;untuk&quot; + 0.012*&quot;pada&quot; + 0.012*&quot;ini&quot; &#39;
+  &#39;+ 0.010*&quot;proses&quot;&#39;),
+ (1,
+  &#39;0.026*&quot;yang&quot; + 0.016*&quot;dengan&quot; + 0.014*&quot;dalam&quot; + 0.014*&quot;dan&quot; + 0.013*&quot;ini&quot; + &#39;
+  &#39;0.013*&quot;untuk&quot; + 0.011*&quot;dari&quot; + 0.008*&quot;menggunakan&quot; + 0.007*&quot;dapat&quot; + &#39;
+  &#39;0.007*&quot;pembelajaran&quot;&#39;),
+ (2,
+  &#39;0.033*&quot;yang&quot; + 0.033*&quot;dan&quot; + 0.019*&quot;dengan&quot; + 0.015*&quot;untuk&quot; + 0.012*&quot;ini&quot; + &#39;
+  &#39;0.011*&quot;dari&quot; + 0.011*&quot;citra&quot; + 0.011*&quot;dalam&quot; + 0.010*&quot;data&quot; + 0.010*&quot;pada&quot;&#39;),
+ (3,
+  &#39;0.032*&quot;yang&quot; + 0.016*&quot;dan&quot; + 0.012*&quot;untuk&quot; + 0.011*&quot;dengan&quot; + 0.011*&quot;ini&quot; + &#39;
+  &#39;0.011*&quot;dalam&quot; + 0.011*&quot;sistem&quot; + 0.010*&quot;data&quot; + 0.008*&quot;dapat&quot; + &#39;
+  &#39;0.008*&quot;dari&quot;&#39;),
+ (4,
+  &#39;0.023*&quot;yang&quot; + 0.018*&quot;dan&quot; + 0.016*&quot;untuk&quot; + 0.012*&quot;dengan&quot; + &#39;
+  &#39;0.011*&quot;sistem&quot; + 0.011*&quot;dalam&quot; + 0.010*&quot;pada&quot; + 0.008*&quot;dari&quot; + 0.008*&quot;ini&quot; &#39;
+  &#39;+ 0.007*&quot;menggunakan&quot;&#39;),
+ (5,
+  &#39;0.026*&quot;yang&quot; + 0.019*&quot;dan&quot; + 0.014*&quot;untuk&quot; + 0.014*&quot;ini&quot; + 0.012*&quot;dengan&quot; + &#39;
+  &#39;0.010*&quot;pada&quot; + 0.009*&quot;dari&quot; + 0.009*&quot;sistem&quot; + 0.009*&quot;dapat&quot; + &#39;
+  &#39;0.009*&quot;dalam&quot;&#39;),
+ (6,
+  &#39;0.037*&quot;yang&quot; + 0.027*&quot;dengan&quot; + 0.021*&quot;dan&quot; + 0.017*&quot;untuk&quot; + 0.016*&quot;ini&quot; + &#39;
+  &#39;0.012*&quot;pada&quot; + 0.012*&quot;dalam&quot; + 0.011*&quot;dari&quot; + 0.009*&quot;sistem&quot; + &#39;
+  &#39;0.009*&quot;hasil&quot;&#39;),
+ (7,
+  &#39;0.038*&quot;yang&quot; + 0.021*&quot;dengan&quot; + 0.019*&quot;dan&quot; + 0.015*&quot;ini&quot; + 0.013*&quot;dari&quot; + &#39;
+  &#39;0.012*&quot;pada&quot; + 0.011*&quot;untuk&quot; + 0.010*&quot;dalam&quot; + 0.010*&quot;menggunakan&quot; + &#39;
+  &#39;0.010*&quot;nilai&quot;&#39;),
+ (8,
+  &#39;0.046*&quot;yang&quot; + 0.024*&quot;dengan&quot; + 0.020*&quot;dan&quot; + 0.014*&quot;dalam&quot; + &#39;
+  &#39;0.014*&quot;sistem&quot; + 0.013*&quot;untuk&quot; + 0.012*&quot;dari&quot; + 0.011*&quot;ini&quot; + 0.010*&quot;pada&quot; &#39;
+  &#39;+ 0.009*&quot;citra&quot;&#39;),
+ (9,
+  &#39;0.032*&quot;yang&quot; + 0.020*&quot;dengan&quot; + 0.019*&quot;dan&quot; + 0.017*&quot;dari&quot; + 0.014*&quot;pada&quot; + &#39;
+  &#39;0.013*&quot;untuk&quot; + 0.011*&quot;ini&quot; + 0.010*&quot;data&quot; + 0.010*&quot;dalam&quot; + &#39;
+  &#39;0.009*&quot;sistem&quot;&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pyLDAvis
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pyLDAvis
+  Downloading pyLDAvis-3.4.1-py3-none-any.whl (2.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.6/2.6 MB</span> <span class=" -Color -Color-Red">15.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting numpy&gt;=1.24.2 (from pyLDAvis)
+  Downloading numpy-1.26.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">18.2/18.2 MB</span> <span class=" -Color -Color-Red">38.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: scipy in /usr/local/lib/python3.10/dist-packages (from pyLDAvis) (1.11.2)
+Collecting pandas&gt;=2.0.0 (from pyLDAvis)
+  Downloading pandas-2.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">12.3/12.3 MB</span> <span class=" -Color -Color-Red">57.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: joblib&gt;=1.2.0 in /usr/local/lib/python3.10/dist-packages (from pyLDAvis) (1.3.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from pyLDAvis) (3.1.2)
+Requirement already satisfied: numexpr in /usr/local/lib/python3.10/dist-packages (from pyLDAvis) (2.8.5)
+Collecting funcy (from pyLDAvis)
+  Downloading funcy-2.0-py2.py3-none-any.whl (30 kB)
+Requirement already satisfied: scikit-learn&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from pyLDAvis) (1.2.2)
+Requirement already satisfied: gensim in /usr/local/lib/python3.10/dist-packages (from pyLDAvis) (4.3.2)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (from pyLDAvis) (67.7.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas&gt;=2.0.0-&gt;pyLDAvis) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas&gt;=2.0.0-&gt;pyLDAvis) (2023.3.post1)
+Collecting tzdata&gt;=2022.1 (from pandas&gt;=2.0.0-&gt;pyLDAvis)
+  Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">341.8/341.8 kB</span> <span class=" -Color -Color-Red">22.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn&gt;=1.0.0-&gt;pyLDAvis) (3.2.0)
+Requirement already satisfied: smart-open&gt;=1.8.1 in /usr/local/lib/python3.10/dist-packages (from gensim-&gt;pyLDAvis) (6.4.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2-&gt;pyLDAvis) (2.1.3)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.0.0-&gt;pyLDAvis) (1.16.0)
+Installing collected packages: funcy, tzdata, numpy, pandas, pyLDAvis
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.23.5
+    Uninstalling numpy-1.23.5:
+      Successfully uninstalled numpy-1.23.5
+  Attempting uninstall: pandas
+    Found existing installation: pandas 1.5.3
+    Uninstalling pandas-1.5.3:
+      Successfully uninstalled pandas-1.5.3
+<span class=" -Color -Color-Red">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.</span>
+<span class=" -Color -Color-Red">google-colab 1.0.0 requires pandas==1.5.3, but you have pandas 2.1.1 which is incompatible.</span>
+<span class=" -Color -Color-Red">numba 0.56.4 requires numpy&lt;1.24,&gt;=1.18, but you have numpy 1.26.0 which is incompatible.</span>
+<span class=" -Color -Color-Red">tensorflow 2.13.0 requires numpy&lt;=1.24.3,&gt;=1.22, but you have numpy 1.26.0 which is incompatible.</span>
+Successfully installed funcy-2.0 numpy-1.26.0 pandas-2.1.1 pyLDAvis-3.4.1 tzdata-2023.3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyLDAvis.gensim</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">pyLDAvis</span>
+<span class="c1"># Visualize the topics</span>
+<span class="n">pyLDAvis</span><span class="o">.</span><span class="n">enable_notebook</span><span class="p">()</span>
+<span class="n">LDAvis_data_filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;./results/ldavis_prepared_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">num_topics</span><span class="p">))</span>
+<span class="c1"># # this is a bit time consuming - make the if statement True</span>
+<span class="c1"># # if you want to execute visualization prep yourself</span>
+<span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+  <span class="n">LDAvis_prepared</span> <span class="o">=</span> <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">gensim</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">lda_model</span><span class="p">,</span> <span class="n">corpus</span><span class="p">,</span> <span class="n">id2word</span><span class="p">)</span>
+  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">LDAvis_data_filepath</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+      <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">LDAvis_prepared</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="c1"># load the pre-prepared pyLDAvis data from disk</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">LDAvis_data_filepath</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">LDAvis_prepared</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">pyLDAvis</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">LDAvis_prepared</span><span class="p">,</span> <span class="s1">&#39;./results/ldavis_prepared_&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_topics</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;.html&#39;</span><span class="p">)</span>
+<span class="n">LDAvis_prepared</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/ipykernel/ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">_RemoteTraceback</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
+<span class="ne">_Remote</span>Traceback: 
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Traceback (most recent call last):</span>
+<span class="sd">  File &quot;/usr/local/lib/python3.10/dist-packages/joblib/externals/loky/process_executor.py&quot;, line 426, in _process_worker</span>
+<span class="sd">    call_item = call_queue.get(block=True, timeout=timeout)</span>
+<span class="sd">  File &quot;/usr/lib/python3.10/multiprocessing/queues.py&quot;, line 122, in get</span>
+<span class="sd">    return _ForkingPickler.loads(res)</span>
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas.core.indexes.numeric&#39;
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">BrokenProcessPool</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-34-6e854b1a6dd9&gt;</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># # if you want to execute visualization prep yourself</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>   <span class="n">LDAvis_prepared</span> <span class="o">=</span> <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">gensim</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">lda_model</span><span class="p">,</span> <span class="n">corpus</span><span class="p">,</span> <span class="n">id2word</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>   <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">LDAvis_data_filepath</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>       <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">LDAvis_prepared</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pyLDAvis/gensim.py</span> in <span class="ni">prepare</span><span class="nt">(topic_model, corpus, dictionary, doc_topic_dist, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span><span class="s2">     opts = fp.merge(_extract_data(topic_model, corpus, dictionary, doc_topic_dist), kwargs)</span>
+<span class="ne">--&gt; </span><span class="mi">123</span><span class="s2">     return vis_prepare(**opts)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pyLDAvis/_prepare.py</span> in <span class="ni">prepare</span><span class="nt">(topic_term_dists, doc_topic_dists, doc_lengths, vocab, term_frequency, R, lambda_step, mds, n_jobs, plot_opts, sort_topics, start_index)</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span><span class="s2">     term_frequency = np.sum(term_topic_freq, axis=0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">432</span><span class="s2">     topic_info = _topic_info(topic_term_dists, topic_proportion,</span>
+<span class="g g-Whitespace">    </span><span class="mi">433</span><span class="s2">                              term_frequency, term_topic_freq, vocab, lambda_step, R,</span>
+<span class="g g-Whitespace">    </span><span class="mi">434</span><span class="s2">                              n_jobs, start_index)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pyLDAvis/_prepare.py</span> in <span class="ni">_topic_info</span><span class="nt">(topic_term_dists, topic_proportion, term_frequency, term_topic_freq, vocab, lambda_step, R, n_jobs, start_index)</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="s2">         ])</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">273</span><span class="s2">     top_terms = pd.concat(Parallel(n_jobs=n_jobs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span><span class="s2">                           (delayed(_find_relevance_chunks)(log_ttd, log_lift, R, ls)</span>
+<span class="nn">    275                           for ls</span> in <span class="ni">_job_chunks</span><span class="nt">(lambda_seq, n_jobs)))</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/joblib/parallel.py</span> in <span class="ni">__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1950</span><span class="s2">         next(output)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1951</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1952</span><span class="s2">         return output if self.return_generator else list(output)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1953</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1954</span><span class="s2">     def __repr__(self):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/joblib/parallel.py</span> in <span class="ni">_get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1593</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1594</span><span class="s2">             with self._backend.retrieval_context():</span>
+<span class="ne">-&gt; </span><span class="mi">1595</span><span class="s2">                 yield from self._retrieve()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1596</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1597</span><span class="s2">         except GeneratorExit:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/joblib/parallel.py</span> in <span class="ni">_retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1697</span><span class="s2">             # worker traceback.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1698</span><span class="s2">             if self._aborting:</span>
+<span class="ne">-&gt; </span><span class="mi">1699</span><span class="s2">                 self._raise_error_fast()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1700</span><span class="s2">                 break</span>
+<span class="g g-Whitespace">   </span><span class="mi">1701</span><span class="s2"> </span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/joblib/parallel.py</span> in <span class="ni">_raise_error_fast</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1732</span><span class="s2">         # called directly or if the generator is gc&#39;ed.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span><span class="s2">         if error_job is not None:</span>
+<span class="ne">-&gt; </span><span class="mi">1734</span><span class="s2">             error_job.get_result(self.timeout)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1735</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1736</span><span class="s2">     def _warn_exit_early(self):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/joblib/parallel.py</span> in <span class="ni">get_result</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">734</span><span class="s2">             # callback thread, and is stored internally. It&#39;s just waiting to</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span><span class="s2">             # be returned.</span>
+<span class="ne">--&gt; </span><span class="mi">736</span><span class="s2">             return self._return_or_raise()</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span><span class="s2">         # For other backends, the main thread needs to run the retrieval step.</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/joblib/parallel.py</span> in <span class="ni">_return_or_raise</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">752</span><span class="s2">         try:</span>
+<span class="g g-Whitespace">    </span><span class="mi">753</span><span class="s2">             if self.status == TASK_ERROR:</span>
+<span class="ne">--&gt; </span><span class="mi">754</span><span class="s2">                 raise self._result</span>
+<span class="g g-Whitespace">    </span><span class="mi">755</span><span class="s2">             return self._result</span>
+<span class="g g-Whitespace">    </span><span class="mi">756</span><span class="s2">         finally:</span>
+
+<span class="ne">BrokenProcessPool</span>: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mounted at /content/drive
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Maulana Malik Ibrohim
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
