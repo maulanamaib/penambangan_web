@@ -1,0 +1,1139 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Pagerank &#8212; penambangan_web</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Pagerank';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Topic Modelling" href="TopicModelling_LDA.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/83963442.jpeg" class="logo__image only-light" alt="penambangan_web - Home"/>
+    <script>document.write(`<img src="_static/83963442.jpeg" class="logo__image only-dark" alt="penambangan_web - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Task</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CrawlingPtaUTM.html">Crawling PTA UTM teknik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling_Berita.html">Crawling Website Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TopicModelling_LDA.html">Topic Modelling</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pagerank</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/maulanmaib/penambangan_web/blob/master/docs/Pagerank.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/maulanmaib/penambangan_web" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/maulanmaib/penambangan_web/issues/new?title=Issue%20on%20page%20%2FPagerank.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Pagerank.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pagerank</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-manual">Hitung Manual</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterasi-0-dan-1">Iterasi 0 dan 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterasi-selanjutnya-sampai-100">Iterasi selanjutnya sampai 100</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-menggunakan-networkx">Hitung menggunakan Networkx</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-terpenting-dan-seterusnya">Keyword terpenting dan seterusnya</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness">Betweenness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degree">Degree</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness">Closeness</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pagerank">
+<h1>Pagerank<a class="headerlink" href="#pagerank" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># G.add_nodes_from([1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
+<span class="c1"># [(1, 2), (2, 1), (2, 4), (3, 4),(3, 5), (4, 7), (4, 6), (5, 7),(6, 8), (7, 9), (8, 9)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span>
+<span class="c1"># nx.draw(G, with_labels=True)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/505ecd20a995d2055936cb0146c12a8d461763a9be2c900000e0e62b15f5d02d.png" src="_images/505ecd20a995d2055936cb0146c12a8d461763a9be2c900000e0e62b15f5d02d.png" />
+</div>
+</div>
+<section id="hitung-manual">
+<h2>Hitung Manual<a class="headerlink" href="#hitung-manual" title="Permalink to this heading">#</a></h2>
+<section id="iterasi-0-dan-1">
+<h3>Iterasi 0 dan 1<a class="headerlink" href="#iterasi-0-dan-1" title="Permalink to this heading">#</a></h3>
+<p><img alt="1cd646_ebc90b85db584b22a363d239624c62ab_mv2.webp" src="data:image/webp;base64,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" /></p>
+<p>untuk iterasi ke 0 akan menggunkan nilai 0.111111 yang berasal dari 1/banyaknya Node, pada gambar graph diatas node yang digunakan ada 9 jadi<font face="Rage" size=3 color='#d39aed'>  1/9 = 0.111111 <font></p>
+<p>outdeggree dari 9 node ini sebanyak:</p>
+<ul class="simple">
+<li><p>Node 1: 2</p></li>
+<li><p>Node 2: 2</p></li>
+<li><p>Node 3: 2</p></li>
+<li><p>Node 4: 2</p></li>
+<li><p>Node 5: 1</p></li>
+<li><p>Node 6: 1</p></li>
+<li><p>Node 7: 1</p></li>
+<li><p>Node 8: 1</p></li>
+<li><p>Node 9: 1</p></li>
+</ul>
+<p>Lalu untuk iterasi ke 1</p>
+<ul class="simple">
+<li><p>P1 = P2/outP2 <br>
+P1 = 0.111111/2 = 0.055556</p></li>
+<li><p>P2 = P1/OutP1<br>
+P2 = 0.111111/2 = 0.055556</p></li>
+<li><p>P3 = P1/OutP1<br>
+P3 = 0.111111/2 = 0.055556</p></li>
+<li><p>P4 = P1/OutP1+P9/OutP9<br>
+P4 = 0.111111/2+0.111111/1 = 0.166666</p></li>
+<li><p>P5 = P2/OutP2+P3/OutP3<br>
+P5 = 0.111111/2+0.111111/2 = 0.111111</p></li>
+<li><p>P6 = P2/OutP2+P5/OutP5<br>
+P6 = 0.111111/2+0.111111/1 = 0.166666</p></li>
+<li><p>P7 = P3/OutP3+P4/OutP4+P6/OutP6<br>
+P7 = 0.111111/2+0.111111/2+0.111111/1 = 0.166666</p></li>
+<li><p>P8 = P4/OutP4+P7/OutP7<br>
+P8 = 0.111111/2+0.111111/1 = 0.166666</p></li>
+<li><p>P9 = P8/OutP8<br>
+P2 = 0.111111/1 = 0.111111</p></li>
+</ul>
+</section>
+<section id="iterasi-selanjutnya-sampai-100">
+<h3>Iterasi selanjutnya sampai 100<a class="headerlink" href="#iterasi-selanjutnya-sampai-100" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/sainsdata/tugas/Data/PageRank2.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-663fc6cc-5e56-45a2-933a-1193bdd71ad7" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>WebPage</th>
+      <th>iterasi 1</th>
+      <th>iterasi 2</th>
+      <th>iterasi 3</th>
+      <th>iterasi 4</th>
+      <th>iterasi 5</th>
+      <th>iterasi 6</th>
+      <th>iterasi 7</th>
+      <th>iterasi 8</th>
+      <th>iterasi 9</th>
+      <th>...</th>
+      <th>iterasi 90</th>
+      <th>iterasi 91</th>
+      <th>iterasi 92</th>
+      <th>iterasi 93</th>
+      <th>iterasi 94</th>
+      <th>iterasi 95</th>
+      <th>iterasi 96</th>
+      <th>iterasi 97</th>
+      <th>iterasi 98</th>
+      <th>iterasi 99</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>P1</td>
+      <td>0.111111</td>
+      <td>0.055556</td>
+      <td>0.027778</td>
+      <td>0.013889</td>
+      <td>0.006944</td>
+      <td>0.003472</td>
+      <td>0.001736</td>
+      <td>0.000868</td>
+      <td>0.000434</td>
+      <td>...</td>
+      <td>1.795100e-28</td>
+      <td>8.975480e-29</td>
+      <td>4.487740e-29</td>
+      <td>2.243870e-29</td>
+      <td>1.121930e-29</td>
+      <td>5.609670e-30</td>
+      <td>2.804840e-30</td>
+      <td>1.402420e-30</td>
+      <td>7.012090e-31</td>
+      <td>3.506040e-31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>P2</td>
+      <td>0.111111</td>
+      <td>0.055556</td>
+      <td>0.027778</td>
+      <td>0.013889</td>
+      <td>0.006944</td>
+      <td>0.003472</td>
+      <td>0.001736</td>
+      <td>0.000868</td>
+      <td>0.000434</td>
+      <td>...</td>
+      <td>1.795100e-28</td>
+      <td>8.975480e-29</td>
+      <td>4.487740e-29</td>
+      <td>2.243870e-29</td>
+      <td>1.121930e-29</td>
+      <td>5.609670e-30</td>
+      <td>2.804840e-30</td>
+      <td>1.402420e-30</td>
+      <td>7.012090e-31</td>
+      <td>3.506040e-31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>P3</td>
+      <td>0.111111</td>
+      <td>0.055556</td>
+      <td>0.027778</td>
+      <td>0.013889</td>
+      <td>0.006944</td>
+      <td>0.003472</td>
+      <td>0.001736</td>
+      <td>0.000868</td>
+      <td>0.000434</td>
+      <td>...</td>
+      <td>1.795100e-28</td>
+      <td>8.975480e-29</td>
+      <td>4.487740e-29</td>
+      <td>2.243870e-29</td>
+      <td>1.121930e-29</td>
+      <td>5.609670e-30</td>
+      <td>2.804840e-30</td>
+      <td>1.402420e-30</td>
+      <td>7.012090e-31</td>
+      <td>3.506040e-31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>P4</td>
+      <td>0.111111</td>
+      <td>0.166666</td>
+      <td>0.138889</td>
+      <td>0.180555</td>
+      <td>0.256944</td>
+      <td>0.267361</td>
+      <td>0.244791</td>
+      <td>0.261284</td>
+      <td>0.283420</td>
+      <td>...</td>
+      <td>2.698412e-01</td>
+      <td>2.698413e-01</td>
+      <td>2.698407e-01</td>
+      <td>2.698409e-01</td>
+      <td>2.698412e-01</td>
+      <td>2.698410e-01</td>
+      <td>2.698408e-01</td>
+      <td>2.698411e-01</td>
+      <td>2.698411e-01</td>
+      <td>2.698409e-01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>P5</td>
+      <td>0.111111</td>
+      <td>0.111111</td>
+      <td>0.055556</td>
+      <td>0.027778</td>
+      <td>0.013889</td>
+      <td>0.006944</td>
+      <td>0.003472</td>
+      <td>0.001736</td>
+      <td>0.000868</td>
+      <td>...</td>
+      <td>3.590190e-28</td>
+      <td>1.795100e-28</td>
+      <td>8.975480e-29</td>
+      <td>4.487740e-29</td>
+      <td>2.243870e-29</td>
+      <td>1.121930e-29</td>
+      <td>5.609670e-30</td>
+      <td>2.804840e-30</td>
+      <td>1.402420e-30</td>
+      <td>7.012090e-31</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>P6</td>
+      <td>0.111111</td>
+      <td>0.166666</td>
+      <td>0.138889</td>
+      <td>0.069444</td>
+      <td>0.034722</td>
+      <td>0.017361</td>
+      <td>0.008681</td>
+      <td>0.004340</td>
+      <td>0.002170</td>
+      <td>...</td>
+      <td>8.975480e-28</td>
+      <td>4.487740e-28</td>
+      <td>2.243870e-28</td>
+      <td>1.121930e-28</td>
+      <td>5.609670e-29</td>
+      <td>2.804840e-29</td>
+      <td>1.402420e-29</td>
+      <td>7.012090e-30</td>
+      <td>3.506040e-30</td>
+      <td>1.753020e-30</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>P7</td>
+      <td>0.111111</td>
+      <td>0.166666</td>
+      <td>0.194444</td>
+      <td>0.152778</td>
+      <td>0.131944</td>
+      <td>0.149305</td>
+      <td>0.144097</td>
+      <td>0.127604</td>
+      <td>0.133246</td>
+      <td>...</td>
+      <td>1.349203e-01</td>
+      <td>1.349206e-01</td>
+      <td>1.349206e-01</td>
+      <td>1.349204e-01</td>
+      <td>1.349204e-01</td>
+      <td>1.349206e-01</td>
+      <td>1.349205e-01</td>
+      <td>1.349204e-01</td>
+      <td>1.349205e-01</td>
+      <td>1.349206e-01</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>P8</td>
+      <td>0.111111</td>
+      <td>0.166666</td>
+      <td>0.250000</td>
+      <td>0.263889</td>
+      <td>0.243055</td>
+      <td>0.260416</td>
+      <td>0.282986</td>
+      <td>0.266493</td>
+      <td>0.258246</td>
+      <td>...</td>
+      <td>2.698407e-01</td>
+      <td>2.698409e-01</td>
+      <td>2.698412e-01</td>
+      <td>2.698410e-01</td>
+      <td>2.698408e-01</td>
+      <td>2.698411e-01</td>
+      <td>2.698411e-01</td>
+      <td>2.698409e-01</td>
+      <td>2.698409e-01</td>
+      <td>2.698411e-01</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>P9</td>
+      <td>0.111111</td>
+      <td>0.111111</td>
+      <td>0.166666</td>
+      <td>0.250000</td>
+      <td>0.263889</td>
+      <td>0.243055</td>
+      <td>0.260416</td>
+      <td>0.282986</td>
+      <td>0.266493</td>
+      <td>...</td>
+      <td>2.698413e-01</td>
+      <td>2.698407e-01</td>
+      <td>2.698409e-01</td>
+      <td>2.698412e-01</td>
+      <td>2.698410e-01</td>
+      <td>2.698408e-01</td>
+      <td>2.698411e-01</td>
+      <td>2.698411e-01</td>
+      <td>2.698409e-01</td>
+      <td>2.698409e-01</td>
+    </tr>
+  </tbody>
+</table>
+<p>9 rows × 100 columns</p>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-663fc6cc-5e56-45a2-933a-1193bdd71ad7')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-663fc6cc-5e56-45a2-933a-1193bdd71ad7 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-663fc6cc-5e56-45a2-933a-1193bdd71ad7');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+</section>
+</section>
+<section id="hitung-menggunakan-networkx">
+<h2>Hitung menggunakan Networkx<a class="headerlink" href="#hitung-menggunakan-networkx" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">D</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.02325581395348838,
+ 2: 0.02325581395348838,
+ 3: 0.02325581395348838,
+ 4: 0.21441294735258318,
+ 5: 0.03313953488372094,
+ 6: 0.051424418604651176,
+ 7: 0.1613872057760252,
+ 8: 0.24497376736957022,
+ 9: 0.22489468415298416}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="n">D</span><span class="o">.</span><span class="n">get</span> <span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 9, 4, 7, 6, 5, 1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;iterasi 4&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0.013889
+1    0.013889
+2    0.013889
+3    0.180555
+4    0.027778
+5    0.069444
+6    0.152778
+7    0.263889
+8    0.250000
+Name: iterasi 4, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="keyword-terpenting-dan-seterusnya">
+<h2>Keyword terpenting dan seterusnya<a class="headerlink" href="#keyword-terpenting-dan-seterusnya" title="Permalink to this heading">#</a></h2>
+<section id="betweenness">
+<h3>Betweenness<a class="headerlink" href="#betweenness" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">db</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.05357142857142857,
+ 2: 0.026785714285714284,
+ 3: 0.017857142857142856,
+ 4: 0.11607142857142856,
+ 5: 0.017857142857142856,
+ 6: 0.10714285714285714,
+ 7: 0.17857142857142855,
+ 8: 0.19642857142857142,
+ 9: 0.10714285714285714}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 7, 4, 6, 9, 1, 2, 3, 5]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="degree">
+<h3>Degree<a class="headerlink" href="#degree" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dx</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">dx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.5,
+ 2: 0.5,
+ 3: 0.375,
+ 4: 0.5,
+ 5: 0.375,
+ 6: 0.375,
+ 7: 0.5,
+ 8: 0.375,
+ 9: 0.25}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="closeness">
+<h3>Closeness<a class="headerlink" href="#closeness" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dc</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">dc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.125,
+ 2: 0.125,
+ 3: 0.16666666666666666,
+ 4: 0.36363636363636365,
+ 5: 0.28125,
+ 6: 0.3333333333333333,
+ 7: 0.5714285714285714,
+ 8: 0.5,
+ 9: 0.36363636363636365}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="TopicModelling_LDA.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Topic Modelling</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-manual">Hitung Manual</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterasi-0-dan-1">Iterasi 0 dan 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterasi-selanjutnya-sampai-100">Iterasi selanjutnya sampai 100</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-menggunakan-networkx">Hitung menggunakan Networkx</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-terpenting-dan-seterusnya">Keyword terpenting dan seterusnya</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness">Betweenness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#degree">Degree</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness">Closeness</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Maulana Malik Ibrohim
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
